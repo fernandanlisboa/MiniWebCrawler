@@ -9,9 +9,17 @@ namespace MiniWebCrawler.Models
         public int Id { get; set; }
         public string Nome { get; set; }
         // public int Likes { get; set; }
-     //   public TimeSpan Tempo { get; set; }
-   //     public int Porcao { get; set; }
+        // public TimeSpan Tempo { get; set; }
+        // public int Porcao { get; set; }
         public virtual Autor Autor { get; set; }
         public virtual Categoria Categoria { get; set; }
+
+        public override string ToString()
+        {
+            String dados = $"Receita: {Nome}\nAutor: {Autor?.Nome}\nCategoria: {Categoria?.Nome}";
+            return dados;
+        }
     }
+
+    
 }
