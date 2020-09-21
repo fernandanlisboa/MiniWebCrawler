@@ -19,6 +19,12 @@ namespace MiniWebCrawler.Models
             String dados = $"Receita: {Nome}\nAutor: {Autor?.Nome}\nCategoria: {Categoria?.Nome}";
             return dados;
         }
+
+        public string listaReceitaCategoria()
+        {
+            String dados = $"Receita: {Nome}\nCategoria: {Categoria?.Nome}";
+            return dados;
+        }
     }
 
     

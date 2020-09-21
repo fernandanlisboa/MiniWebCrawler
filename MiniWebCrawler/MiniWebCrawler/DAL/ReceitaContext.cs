@@ -15,7 +15,6 @@ namespace MiniWebCrawler.DAL
         public void Iniciar()
         {
             this.Database.EnsureCreated();
-
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -27,18 +26,8 @@ namespace MiniWebCrawler.DAL
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Autor>().ToTable("Autor");
-            
             modelBuilder.Entity<Categoria>().ToTable("Categoria");
-            
-            modelBuilder.Entity<Receita>(entity =>
-            {
-                entity.HasKey(e => e.Id);
-                entity.ToTable("Receita");
-                entity.HasOne(a => a.Autor)
-                    .WithMany(r => r.Receitas);
-                entity.HasOne(c => c.Categoria)
-                    .WithMany(r => r.Receitas);
-            });       
+            modelBuilder.Entity<Receita>().ToTable("Receita");
         }
     }
 }
