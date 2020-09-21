@@ -75,7 +75,7 @@ namespace MiniWebCrawler
                 };
 
                 AdicionaReceita(categoria, receita, autor);
-                Console.WriteLine("\nReceita: " + receita.Nome + "\nAutor: " + autor.Nome + "\nCategoria: " + categoria.Nome);
+                //Console.WriteLine("\nReceita: " + receita.Nome + "\nAutor: " + autor.Nome + "\nCategoria: " + categoria.Nome);
             }
         }
 
@@ -261,7 +261,7 @@ namespace MiniWebCrawler
                     recipe.Autor = author;
                     context.Receita.Add(recipe);
                     context.SaveChanges();
-                    Console.WriteLine("\nReceita adicionada com sucesso ao banco!\n\n");
+                   // Console.WriteLine("\nReceita adicionada com sucesso ao banco!\n\n");
                 }
                 catch
                 {
@@ -284,6 +284,7 @@ namespace MiniWebCrawler
                     .Include(receita => receita.Autor)
                     .Include(r => r.Categoria)
                     .ToList<Receita>();
+                    Console.WriteLine("Todas as receitas cadastradas!");
                     foreach (var r in receitas)
                     {
                         Console.WriteLine(r);
@@ -294,6 +295,7 @@ namespace MiniWebCrawler
                 {
                     Console.WriteLine("Erro ao apresentar todas as receitas cadastradas no banco!");
                 }
+                Console.ReadLine();
             }
         }
 

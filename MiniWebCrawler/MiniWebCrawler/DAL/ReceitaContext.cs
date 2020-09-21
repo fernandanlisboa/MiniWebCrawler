@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MiniWebCrawler.DAL
 {
-    class ReceitaContext : DbContext
+    public class ReceitaContext : DbContext
     {
         public DbSet<Receita> Receita { get; set;  }
         public DbSet<Autor> Autor { get; set; }

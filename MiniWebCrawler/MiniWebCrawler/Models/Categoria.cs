@@ -8,7 +8,6 @@ namespace MiniWebCrawler.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        //public virtual ICollection<Receita> Receitas { get; set; }
 
         public override string ToString()
         {
