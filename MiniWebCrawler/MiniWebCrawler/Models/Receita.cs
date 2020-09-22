@@ -11,6 +11,8 @@ namespace MiniWebCrawler.Models
         // public int Likes { get; set; }
         // public TimeSpan Tempo { get; set; }
         // public int Porcao { get; set; }
+        public int AutorId { get; set; }
+        public int CategoriaId { get; set; }
         public virtual Autor Autor { get; set; }
         public virtual Categoria Categoria { get; set; }
 

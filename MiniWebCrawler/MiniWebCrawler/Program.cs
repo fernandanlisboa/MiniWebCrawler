@@ -117,18 +117,22 @@ namespace MiniWebCrawler
         /// </summary>
         /// <param name="author">objeto tipo Autor que será comparado</param>
         /// <returns>true, para caso seja encontrado, se não, false</returns>
-        private static bool existeAutor(Autor author)
+        private static bool existeAutor(string author)
         {
             using (var context = new ReceitaContext())
             {
                 context.Database.EnsureCreated();
-                var autores = context.Autor;
-                foreach(var a in autores)
+                Autor autor = new Autor();
+                try
                 {
-                    if (author == a)
-                    {
-                        return true;
-                    }
+                    autor = context.Autor.Where<Autor>(a => a.Nome == author).FirstOrDefault();
+                }
+                catch
+                {
+                }
+                if(autor != null)
+                {
+                    return true;
                 }
             }
             return false;
@@ -139,17 +143,24 @@ namespace MiniWebCrawler
         /// </summary>
         /// <param name="category"></param>
         /// <returns></returns>
-        private static bool existeCategoria(Categoria category)
+        private static bool existeCategoria(string category)
         {
             using (var context = new ReceitaContext())
             {
-                var categorias = context.Categoria;
-                foreach(var c in categorias)
+                context.Database.EnsureCreated();
+                Categoria categoria = new Categoria();
+                try
                 {
-                    if (c == category)
-                    {
-                        return true;
-                    }
+                    categoria = context.Categoria.Where<Categoria>(categoria => categoria.Nome == category).FirstOrDefault();
+                    
+                }
+                catch
+                {
+                    
+                }
+                if(categoria != null)
+                {
+                    return true;
                 }
             }
             return false;
@@ -208,19 +219,24 @@ namespace MiniWebCrawler
         /// </summary>
         /// <param name="recipe"></param>
         /// <returns>retorna true se a receita já existir, e false no caso contrário</returns>
-        private static bool existeReceita(Receita recipe)
+        private static bool existeReceita(string recipe, string author)
         {
             using (var context = new ReceitaContext())
             {
                 context.Database.EnsureCreated();
-                var receitas = context.Receita;
-                foreach(var r in receitas)
+                Receita receita = new Receita();
+                try
                 {
-                    if(r == recipe)
-                    {
-                        return true;
-                    }
-                }      
+                    receita = context.Receita.Where<Receita>(r => r.Nome == recipe && r.Autor.Nome == author).FirstOrDefault();
+                    
+                }
+                catch
+                {
+                }
+                if(receita != null)
+                {
+                    return true;
+                }
             }
             return false;
         }
@@ -239,7 +255,7 @@ namespace MiniWebCrawler
         /// </param>
         private static void AdicionaReceita(Categoria category, Receita recipe, Autor author)
         {
-            if (existeReceita(recipe))
+            if (existeReceita(recipe.Nome, author.Nome))
             {
                 return;
             }
@@ -248,20 +264,28 @@ namespace MiniWebCrawler
                 context.Database.EnsureCreated();
                 try
                 {
-                    if (existeCategoria(category))
+                    if (existeCategoria(category.Nome))
                     {
                         category = buscaCategoria(category.Nome);
+                        recipe.CategoriaId = category.Id;
+                    }
+                    else
+                    {
+                        recipe.Categoria = category;
                     }
 
-                    if (existeAutor(author))
+                    if (existeAutor(author.Nome))
                     {
                         author = buscaAutor(author.Nome);
+                        recipe.AutorId = author.Id;
                     }
-                    recipe.Categoria = category;
-                    recipe.Autor = author;
+                    else
+                    {
+                        recipe.Autor = author; 
+                    }                
+                    
                     context.Receita.Add(recipe);
                     context.SaveChanges();
-                   // Console.WriteLine("\nReceita adicionada com sucesso ao banco!\n\n");
                 }
                 catch
                 {
