@@ -57,6 +57,7 @@ C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\obj\Debug\netcoreapp3.1\MiniWebCrawler.csprojAssemblyReference.cache
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\obj\Debug\netcoreapp3.1\MiniWebCrawler.AssemblyInfoInputs.cache
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\obj\Debug\netcoreapp3.1\MiniWebCrawler.AssemblyInfo.cs
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\obj\Debug\netcoreapp3.1\MiniWebCrawler.csproj.CoreCompileInputs.cache

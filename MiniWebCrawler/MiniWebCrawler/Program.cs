@@ -15,11 +15,12 @@ namespace MiniWebCrawler
         static void Main(string[] args)
         {
             printInicio();
-            ReceitaContext context = new ReceitaContext();
-           // context.Iniciar();
             startCrawlerasync();
-            Console.ReadLine();
+            //Console.ReadLine();
             listaReceitas();
+            //buscarAutor();
+            //buscarCategoria();
+            Console.ReadLine();
         }
 
         private static void printInicio()
@@ -29,6 +30,37 @@ namespace MiniWebCrawler
                 "\nEspero que se delicie também!!!");
             Console.WriteLine("\n\n\n\tIniciando Crawler...");
         }
+
+        private static void buscarAutor()
+        {
+            Console.WriteLine("\nDigite o nome do autor desejado: ");
+            var a = Console.ReadLine();
+            if (existeAutor(a))
+            {
+                Autor autor = buscaAutor(a);
+                listaReceitasAutor(autor);
+            }
+            else
+            {
+                Console.WriteLine("Esse autor não foi encontrado!");
+            }
+        }
+
+        private static void buscarCategoria()
+        {
+            Console.WriteLine("\nDigite o nome da categoria desejada: ");
+            var c = Console.ReadLine();
+            if (existeCategoria(c))
+            {
+                Categoria categoria = buscaCategoria(c);
+                listaReceitaCategoria(categoria);
+            }
+            else
+            {
+                Console.WriteLine("Essa categoria não foi encontrada!");
+            }
+        }
+
 
         /// <summary>
         /// inicia o WebCrawler coletando as receitas mais novas do site
@@ -345,15 +377,14 @@ namespace MiniWebCrawler
         }
 
 
-        private static void listaReceitasAutor(string autor)
+        private static void listaReceitasAutor(Autor autor)
         {
-            Autor author = buscaAutor(autor);
             using (var context = new ReceitaContext())
             {
                 context.Database.EnsureCreated();
                 try
                 {
-                    var receitas = context.Receita.Where(r => r.Autor == author).ToList();
+                    var receitas = context.Receita.Where(r => r.Autor == autor).ToList();
                     foreach(var receita in receitas)
                     {
                         Console.WriteLine(receita.receitaAutor());
@@ -368,9 +399,8 @@ namespace MiniWebCrawler
             }
         }
 
-        private static void listaReceitaCategoria(string category)
+        private static void listaReceitaCategoria(Categoria categoria)
         {
-            Categoria categoria = buscaCategoria(category);
             using (var context = new ReceitaContext())
             {
                 context.Database.EnsureCreated();

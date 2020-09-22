@@ -28,7 +28,8 @@ namespace MiniWebCrawler.Models
         {
             String dados = $"Nome da receita: {Nome}\nLikes: {Likes}\nTempo de preparo: {Tempo}\n"
                 + $"Quantidade de Porções: {Porcao}\n"
-                + $"Autor: {Autor?.Nome}";
+              //  + $"Categoria: {Categoria?.Nome}"
+                ;
             return dados;
         }
 
@@ -36,7 +37,8 @@ namespace MiniWebCrawler.Models
         {
             String dados = $"Nome da receita: {Nome}\nLikes: {Likes}\nTempo de preparo: {Tempo}\n"
                 + $"Quantidade de Porções: {Porcao}\n"
-                + $"Categoria: {Categoria?.Nome}";
+             //   + $"Autor: {Autor?.Nome}"
+             ;
             return dados;
         }
     }
