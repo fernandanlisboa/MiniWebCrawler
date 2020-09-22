@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="" rel="noopener">
+  <img width=300px height=200px src="https://rockcontent.com/wp-content/uploads/2018/06/web_crawler-1024x538.png"></a>
+</p>
+
 <h2 align="center">Mini WebCrawler</h2>
 
 ---
@@ -10,7 +15,6 @@
 
 - [Sobre](#sobre)
 - [Iniciando](#inicio)
-- [Preparando Uso](#preparando)
 - [Como Usar](#como-usar)
 - [Tecnologias Usadas](#tecnologias-usadas)
 - [Desenvolvedores](#desenvolvedores)
