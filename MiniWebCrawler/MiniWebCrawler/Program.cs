@@ -55,9 +55,8 @@ namespace MiniWebCrawler
                 ow = ow.Replace("\n", "");
 
                 var likes = div.Descendants("div").Where(node => node.GetAttributeValue("class", "").Equals("favorites")).ToList();
-                var contLikes = Convert.ToInt32(likes[0].InnerText.Replace("\n", ""));
                 
-                var tempo = div.Descendants("div").Where(node => node.GetAttributeValue("class", "").Equals("numbers")).ToList();
+                var tempo = div.Descendants("div").Where(node => node.GetAttributeValue("class", "").Equals("time")).ToList();
                 var tem = tempo[0].InnerText.Replace("\n", "");
 
                 var portion = div.Descendants("div").Where(node => node.GetAttributeValue("class", "").Equals("portion")).ToList();
@@ -78,7 +77,8 @@ namespace MiniWebCrawler
                     Nome = (div.Descendants("h3").FirstOrDefault().InnerText).Replace("\n", ""),
                     Tempo = tem,
                     Porcao = Convert.ToInt32(por[0]),
-                };
+                    Likes = Convert.ToInt32(likes[0].InnerText.Replace("\n", "")),
+            };
 
                 AdicionaReceita(categoria, receita, autor);
                 //Console.WriteLine("\nReceita: " + receita.Nome + "\nAutor: " + autor.Nome + "\nCategoria: " + categoria.Nome);
@@ -158,7 +158,6 @@ namespace MiniWebCrawler
                 try
                 {
                     categoria = context.Categoria.Where<Categoria>(categoria => categoria.Nome == category).FirstOrDefault();
-                    
                 }
                 catch
                 {
@@ -225,7 +224,7 @@ namespace MiniWebCrawler
         /// </summary>
         /// <param name="recipe"></param>
         /// <returns>retorna true se a receita já existir, e false no caso contrário</returns>
-        private static bool existeReceita(string recipe, string author)
+        private static int existeReceita(Receita recipe, string author)
         {
             using (var context = new ReceitaContext())
             {
@@ -233,18 +232,18 @@ namespace MiniWebCrawler
                 Receita receita = new Receita();
                 try
                 {
-                    receita = context.Receita.Where<Receita>(r => r.Nome == recipe && r.Autor.Nome == author).FirstOrDefault();
-                    
+                    receita = context.Receita
+                        .Where<Receita>(r => r.Nome == recipe.Nome && r.Tempo == recipe.Tempo && r.Porcao == recipe.Porcao && r.Autor.Nome == author).FirstOrDefault();
+                    return receita.Id;
                 }
                 catch
                 {
                 }
                 if(receita != null)
                 {
-                    return true;
+                    return -1;
                 }
             }
-            return false;
         }
 
         /// <summary>
@@ -261,42 +260,56 @@ namespace MiniWebCrawler
         /// </param>
         private static void AdicionaReceita(Categoria category, Receita recipe, Autor author)
         {
-            if (existeReceita(recipe.Nome, author.Nome))
-            {
-                return;
-            }
+            
             using (var context = new ReceitaContext())
             {
                 context.Database.EnsureCreated();
-                try
+                int id = existeReceita(recipe, author.Nome);
+                if (id != -1)
                 {
-                    if (existeCategoria(category.Nome))
+                    try
                     {
-                        category = buscaCategoria(category.Nome);
-                        recipe.CategoriaId = category.Id;
+                        var updateRecipe = context.Receita.Where<Receita>(r => r.Id == id).FirstOrDefault();
+                        updateRecipe.Likes = recipe.Likes;
+                        context.SaveChanges();
                     }
-                    else
+                    catch
                     {
-                        recipe.Categoria = category;
+                        Console.WriteLine("Erro ao atualizar receita!");
                     }
+                }
+                else
+                {
+                    try
+                    {
+                        if (existeCategoria(category.Nome))
+                        {
+                            category = buscaCategoria(category.Nome);
+                            recipe.CategoriaId = category.Id;
+                        }
+                        else
+                        {
+                            recipe.Categoria = category;
+                        }
 
-                    if (existeAutor(author.Nome))
-                    {
-                        author = buscaAutor(author.Nome);
-                        recipe.AutorId = author.Id;
+                        if (existeAutor(author.Nome))
+                        {
+                            author = buscaAutor(author.Nome);
+                            recipe.AutorId = author.Id;
+                        }
+                        else
+                        {
+                            recipe.Autor = author;
+                        }
+
+                        context.Receita.Add(recipe);
+                        context.SaveChanges();
                     }
-                    else
+                    catch
                     {
-                        recipe.Autor = author; 
-                    }                
-                    
-                    context.Receita.Add(recipe);
-                    context.SaveChanges();
-                }
-                catch
-                {
-                    Console.WriteLine("Erro ao adicionar a receita ao banco!");
-                }
+                        Console.WriteLine("Erro ao adicionar a receita ao banco!");
+                    }
+                }                
             }       
         }
 
