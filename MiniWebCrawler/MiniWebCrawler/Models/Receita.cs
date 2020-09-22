@@ -24,7 +24,15 @@ namespace MiniWebCrawler.Models
             return dados;
         }
 
-        public string listaReceitaCategoria()
+        public string receitaAutor()
+        {
+            String dados = $"Nome da receita: {Nome}\nLikes: {Likes}\nTempo de preparo: {Tempo}\n"
+                + $"Quantidade de Porções: {Porcao}\n"
+                + $"Autor: {Autor?.Nome}";
+            return dados;
+        }
+
+        public string receitaCategoria()
         {
             String dados = $"Nome da receita: {Nome}\nLikes: {Likes}\nTempo de preparo: {Tempo}\n"
                 + $"Quantidade de Porções: {Porcao}\n"

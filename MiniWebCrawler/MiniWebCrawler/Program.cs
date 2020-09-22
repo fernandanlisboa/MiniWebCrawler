@@ -135,6 +135,7 @@ namespace MiniWebCrawler
                 }
                 catch
                 {
+                    Console.WriteLine("Algo deu errado! :/");
                 }
                 if(autor != null)
                 {
@@ -161,7 +162,7 @@ namespace MiniWebCrawler
                 }
                 catch
                 {
-                    
+                    Console.WriteLine("Algo deu errado! :/");
                 }
                 if(categoria != null)
                 {
@@ -234,16 +235,17 @@ namespace MiniWebCrawler
                 {
                     receita = context.Receita
                         .Where<Receita>(r => r.Nome == recipe.Nome && r.Tempo == recipe.Tempo && r.Porcao == recipe.Porcao && r.Autor.Nome == author).FirstOrDefault();
-                    return receita.Id;
                 }
                 catch
                 {
+                    Console.WriteLine("Algo deu errado! :/");
                 }
                 if(receita != null)
                 {
-                    return -1;
+                    return receita.Id;
                 }
             }
+            return -1;
         }
 
         /// <summary>
@@ -354,7 +356,8 @@ namespace MiniWebCrawler
                     var receitas = context.Receita.Where(r => r.Autor == author).ToList();
                     foreach(var receita in receitas)
                     {
-                        Console.WriteLine($"Receita: {receita.Nome}\nCategoria: {receita.Categoria.Nome}\n");
+                        Console.WriteLine(receita.receitaAutor());
+                        Console.WriteLine("===================================================================");
                     }
                 }
                 catch
@@ -376,7 +379,8 @@ namespace MiniWebCrawler
                     var receitas = context.Receita.Where(r => r.Categoria == categoria).ToList();
                     foreach (var receita in receitas)
                     {
-                        Console.WriteLine($"Receita: {receita.Nome}\nAutor: {receita.Autor.Nome}\n");
+                        Console.WriteLine(receita.receitaCategoria());
+                        Console.WriteLine("\n================================================================\n");
                     }
                 }
                 catch
