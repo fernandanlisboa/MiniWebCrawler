@@ -54,11 +54,15 @@ namespace MiniWebCrawler
                 var ow = owner[0].Descendants("span").FirstOrDefault().InnerText;
                 ow = ow.Replace("\n", "");
 
-               // var likes = div.Descendants("div").Where(node => node.GetAttributeValue("class", "").Equals("favorites")).ToList();
+                var likes = div.Descendants("div").Where(node => node.GetAttributeValue("class", "").Equals("favorites")).ToList();
+                var contLikes = Convert.ToInt32(likes[0].InnerText.Replace("\n", ""));
+                
+                var tempo = div.Descendants("div").Where(node => node.GetAttributeValue("class", "").Equals("numbers")).ToList();
+                var tem = tempo[0].InnerText.Replace("\n", "");
 
-                //var tempo = div.Descendants("div").Where(node => node.GetAttributeValue("class", "").Equals("numbers")).ToList();
-               // var tem = tempo[0].Descendants("div").FirstOrDefault().InnerText;
-
+                var portion = div.Descendants("div").Where(node => node.GetAttributeValue("class", "").Equals("portion")).ToList();
+                string porcao = portion[0].InnerText.Replace("\n", "");
+                string[] por = porcao.Split(" ");
                 var categoria = new Categoria
                 {
                     Nome = cate
@@ -72,6 +76,8 @@ namespace MiniWebCrawler
                 var receita = new Receita
                 {
                     Nome = (div.Descendants("h3").FirstOrDefault().InnerText).Replace("\n", ""),
+                    Tempo = tem,
+                    Porcao = Convert.ToInt32(por[0]),
                 };
 
                 AdicionaReceita(categoria, receita, autor);

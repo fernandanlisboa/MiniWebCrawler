@@ -8,9 +8,9 @@ namespace MiniWebCrawler.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        // public int Likes { get; set; }
-        // public TimeSpan Tempo { get; set; }
-        // public int Porcao { get; set; }
+        public int Likes { get; set; }
+        public string Tempo { get; set; }
+        public int Porcao { get; set; }
         public int AutorId { get; set; }
         public int CategoriaId { get; set; }
         public virtual Autor Autor { get; set; }
@@ -18,13 +18,17 @@ namespace MiniWebCrawler.Models
 
         public override string ToString()
         {
-            String dados = $"Receita: {Nome}\nAutor: {Autor?.Nome}\nCategoria: {Categoria?.Nome}";
+            String dados = $"Nome da receita: {Nome}\nLikes: {Likes}\nTempo de preparo: {Tempo}\n"
+                + $"Quantidade de Porções: {Porcao}\n"
+                + $"Autor: {Autor?.Nome}\nCategoria: {Categoria?.Nome}";
             return dados;
         }
 
         public string listaReceitaCategoria()
         {
-            String dados = $"Receita: {Nome}\nCategoria: {Categoria?.Nome}";
+            String dados = $"Nome da receita: {Nome}\nLikes: {Likes}\nTempo de preparo: {Tempo}\n"
+                + $"Quantidade de Porções: {Porcao}\n"
+                + $"Categoria: {Categoria?.Nome}";
             return dados;
         }
     }
