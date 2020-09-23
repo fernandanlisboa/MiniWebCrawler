@@ -25,11 +25,12 @@ Esse Mini Web-Crawler tem como o propósito capturar as receitas recém adiciona
 
 ## 🏁 Iniciando <a name = "inicio"></a>
 
-Essas serão as instruções de como reproduzir uma cópia do seu projeto para desenvolvê-lo ou testá-lo. Veja "[Preparando Uso](#preparando)" para instruções de como preparar o sistema desenvolvido para uso.
+Essas serão as instruções de como reproduzir uma cópia do seu projeto para desenvolvê-lo ou testá-lo. 
 
 ### Pré-requisitos
 
 Ter instalado o <a href="https://visualstudio.microsoft.com/pt-br/">Visual Studio</a>.
+Ter instalado o <a href="https://dev.mysql.com/downloads/workbench/">MySQLWorkbench</a>.
 
 ## 🎈 Como Usar <a name="como-usar"></a>
 
@@ -37,7 +38,7 @@ Instruções de como usar o sistema.
 
 ## ⛏️ Tecnologias Usadas <a name = "tecnologias-usadas"></a>
 
-- [MySQL](https://www.mysql.com/) - Banco de Dados
+- [MySQL](https://www.mysql.com/) - Gerenciador do Banco de Dados
 - [EntityFramework](https://docs.microsoft.com/pt-br/ef/) - Framework de Servidor
 - [.NET](https://docs.microsoft.com/pt-br/dotnet/framework/) - Framework Web
 - [C#](https://docs.microsoft.com/pt-br/dotnet/csharp/) - Linguagem utilizada
