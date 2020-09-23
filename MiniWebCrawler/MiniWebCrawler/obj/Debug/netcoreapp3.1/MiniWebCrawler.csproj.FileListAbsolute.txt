@@ -5,8 +5,6 @@ C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\MiniWebCrawler.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\MiniWebCrawler.pdb
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
-C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\EntityFramework.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\HtmlAgilityPack.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\HtmlAgilityPack.CssSelectors.dll
@@ -37,10 +35,8 @@ C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\MySql.Data.EntityFrameworkCore.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\Renci.SshNet.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\SshNet.Security.Cryptography.dll
-C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\System.CodeDom.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
-C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
@@ -48,11 +44,6 @@ C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\System.Xml.XPath.XmlDocument.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
-C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\ferna\OneDrive\Documentos\faculdade\LPIII\MiniWebCrwaler\MiniWebCrawler\MiniWebCrawler\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll

@@ -18,8 +18,8 @@ namespace MiniWebCrawler
             startCrawlerasync();
             //Console.ReadLine();
             listaReceitas();
-            //buscarAutor();
-            //buscarCategoria();
+            buscarAutor();
+            buscarCategoria();
             Console.ReadLine();
         }
 
@@ -384,7 +384,8 @@ namespace MiniWebCrawler
                 context.Database.EnsureCreated();
                 try
                 {
-                    var receitas = context.Receita.Where(r => r.Autor == autor).ToList();
+                    var receitas = context.Receita.Where(r => r.Autor == autor).Include(r => r.Categoria)
+                    .ToList<Receita>();
                     foreach(var receita in receitas)
                     {
                         Console.WriteLine(receita.receitaAutor());
@@ -406,7 +407,8 @@ namespace MiniWebCrawler
                 context.Database.EnsureCreated();
                 try
                 {
-                    var receitas = context.Receita.Where(r => r.Categoria == categoria).ToList();
+                    var receitas = context.Receita.Where(r => r.Categoria == categoria).Include(r => r.Autor)
+                    .ToList<Receita>();
                     foreach (var receita in receitas)
                     {
                         Console.WriteLine(receita.receitaCategoria());

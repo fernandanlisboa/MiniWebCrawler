@@ -38,10 +38,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.4, )"
-            },
             "HtmlAgilityPack": {
               "target": "Package",
               "version": "[1.11.24, )"
